@@ -58,3 +58,18 @@ export let getInstructorOfStudent = (studentId) => {
 // It should return the student object who knows the most programming languages
 // Ex: getStudentWithMostLangs()      // returns Rick Sanchez
 // HINT: You may not need the `find` method for this. This is one of the few cases where a `for` loop might be appropriate
+
+export let getStudentWithMostLangs = () => {
+   let mostLangs = []
+   let largest = [0]
+   students.forEach(student => {
+       mostLangs.push(student.languages.length)
+   })
+   mostLangs.forEach(numLang => {
+       if (numLang > largest[0]) {
+           largest.pop();
+           largest.push(numLang)
+       }
+   })
+   return students.find(student => student.languages.length === largest[0])
+}
