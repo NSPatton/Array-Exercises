@@ -10,7 +10,7 @@ const instructors = useInstructors();
 
 export let getStudentById = (id) => {
     return students.find(student => student.id === id)
-}
+};
 
 // Export a function called getInstructorById
 // It should accept one integer parameter named `id`
@@ -19,7 +19,7 @@ export let getStudentById = (id) => {
 
 export let getInstructorById = (id) => {
     return instructors.find(instructor => instructor.id === id)
-}
+};
 
 // Export a function called getStudentByLastName
 // It should accept one string parameter named `lastName`
@@ -29,13 +29,20 @@ export let getInstructorById = (id) => {
 
 export let getStudentByLastName = (lastName) => {
     return students.find(student => student.lastName.toUpperCase() === lastName.toUpperCase())
-}
+};
 
 // Export a function called getStudentByName
 // It should accept one string parameter named `fullName`
 // It should return the student object whose first and last name match `fullName`
 // It should NOT be case sensitive
 // Ex: getStudentByName("Summer SMITH")
+
+export let getStudentByName = (fullName) => {
+    return students.find(student => {
+        let studentName = student.firstName + " " + student.lastName
+        return studentName.toUpperCase() === fullName.toUpperCase()
+    })
+};
 
 // Export a function called getInstructorOfStudent
 // It should accept one integeter parameter named `studentId`
