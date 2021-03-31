@@ -49,6 +49,10 @@ export let getStudentByName = (fullName) => {
 // It should return the instructor object of the student whose id matches `studentId`
 // Ex: getInstructorOfStudent(4)      // returns Brenda Long
 
+export let getInstructorOfStudent = (studentId) => {
+    return instructors.find(instructor => instructor.id === students.find(student => student.id === studentId).instructorId)
+}
+
 // Export a function called getStudentWithMostLangs
 // It should not accept any parameters
 // It should return the student object who knows the most programming languages
