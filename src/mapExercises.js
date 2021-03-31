@@ -24,3 +24,13 @@ export let getStudentNames = () => {
     <h2>Cohort 43</h2>
   </div>
 */
+
+export let StudentList = () => {
+  const nameAndCohort = students.map(student => {
+    return `<div>
+    <h1>${student.firstName} ${student.lastName}</h1>
+    <h2>Cohort ${student.cohort}</h2>
+    </div>`
+  }).join("")
+  return nameAndCohort
+}
